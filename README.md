@@ -2,6 +2,10 @@
 
 ## Data transfer between components
 ### parent to child
+* how to pass data from parent component to display it in child comp
+    * the [child component](src\app\components\data-transfer-between-components\parent-to-child\child-getting-data-from-parent\child-getting-data-from-parent.component.html) contains property `parentInputData` its Value is set with 
+    [parent comp](src\app\components\data-transfer-between-components\parent-to-child\parent-passing-data-to-child\parent-passing-data-to-child.component.ts) propery `data` by using `@Input()`
+    * this enables `[parentInputData]="data"` into the [child component](src\app\components\data-transfer-between-components\parent-to-child\parent-passing-data-to-child\parent-passing-data-to-child.component.html) html template
 
 ## routing
 content: how to set up basic routing
