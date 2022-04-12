@@ -1,0 +1,6 @@
+<div class="parent-getting-data-from-child">
+    <h3>---parent</h3>
+    <p>message from Child: <span>{{childMessage}}</span></p>   
+    <app-child-passing-data-to-parent (emitData)="getChildData($event)"></app-child-passing-data-to-parent>
+  </div>
+  

@@ -1,0 +1,8 @@
+<div class="parent-bi-directional">
+  <h3>---parent</h3>
+  <input type="text" placeholder="type something" [(ngModel)]="data" />
+  <app-child-bi-directional
+    [sharedData]="data"
+    (emitData)="getChildData($event)"
+  ></app-child-bi-directional>
+</div>
