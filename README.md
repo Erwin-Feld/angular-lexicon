@@ -11,12 +11,20 @@
 * how to pass data from child to parent comp
     * this can be done via `@Output` inside the [child component](src\app\components\data-transfer-between-components\child-to-parent\child-passing-data-to-parent\child-passing-data-to-parent.component.ts) 
         * `@Output() emitData = new EventEmitter<string>();` --> creates a new EventEmitter `emitData` 
-            * this Emitter can be transmitted to the parent
+            * this Emitter can be transmitted to the parent which caries a string value
                 * logic here is when a click event in the child comp [happens](src\app\components\data-transfer-between-components\child-to-parent\child-passing-data-to-parent\child-passing-data-to-parent.component.html) a value is transmitted to the parent  
                     
     * to receave the Event to the parent the EventEmitter `(emitData)` gets connected to a parent method [getChildData](src\app\components\data-transfer-between-components\child-to-parent\parent-getting-data-from-child\parent-getting-data-from-child.component.ts) 
-      *  to set this in the template add this when setting up the [child to parent](src\app\components\data-transfer-between-components\child-to-parent\parent-getting-data-from-child\parent-getting-data-from-child.component.html)  
-      `(emitData)="getChildData($event)"`
+      *  to set this in the template add this  `(emitData)="getChildData($event)"` when setting up the [child comp](src\app\components\data-transfer-between-components\child-to-parent\parent-getting-data-from-child\parent-getting-data-from-child.component.html)  
+     
+### bi-directional
+
+* data provided to child component via `@Input` can be changed by child comp and send back to parent comp via `@Output`
+    * the `@Output` EventTransmiter receaved by the [parent method](src\app\components\data-transfer-between-components\bi-directional\parent-bi-directional\parent-bi-directional.component.ts) carries a value, the value is then set to the parent initial propery value
+
+* ` [(ngModel)]=""` is used to directly bind the input value to a [property](src\app\components\data-transfer-between-components\bi-directional\child-bi-directional\child-bi-directional.component.html)
+    * to use ` [(ngModel)]=""`-->  `FormsModule` needs to be added to [app.module](src\app\app.module.ts) imports
+
 
 
 ## routing
