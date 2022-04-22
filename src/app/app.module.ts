@@ -12,6 +12,11 @@ import { ChildPassingDataToParentComponent } from './components/data-transfer-be
 import { ChildBiDirectionalComponent } from './components/data-transfer-between-components/bi-directional/child-bi-directional/child-bi-directional.component';
 import { ParentBiDirectionalComponent } from './components/data-transfer-between-components/bi-directional/parent-bi-directional/parent-bi-directional.component';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {MatTableModule} from '@angular/material/table';
+import { BasicMaterialTableComponent } from './components/using-tables/basic-material-table/basic-material-table.component';
+import { TableCollectionComponent } from './components/using-tables/table-collection.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +29,15 @@ import { FormsModule } from '@angular/forms';
     ChildPassingDataToParentComponent,
     ChildBiDirectionalComponent,
     ParentBiDirectionalComponent,
+    BasicMaterialTableComponent,
+    TableCollectionComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    BrowserAnimationsModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
