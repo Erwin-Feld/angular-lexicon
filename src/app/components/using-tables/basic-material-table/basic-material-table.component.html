@@ -1,0 +1,29 @@
+<table mat-table [dataSource]="userMockData" class="mat-elevation-z8">
+  
+<!-- adds a column with description -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <td mat-cell *matCellDef="let userData">{{ userData.id }}</td>
+  </ng-container>
+<!-- --------------------------------  -->
+
+  <ng-container matColumnDef="first_name">
+    <th mat-header-cell *matHeaderCellDef>FIRST NAME</th>
+    <td mat-cell *matCellDef="let userData">{{ userData.first_name }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="last_name">
+    <th mat-header-cell *matHeaderCellDef>LAST NAME</th>
+    <td mat-cell *matCellDef="let userData">{{ userData.last_name }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef>EMAIL</th>
+    <td mat-cell *matCellDef="let userData">{{ userData.email }}</td>
+  </ng-container>
+
+
+
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
+</table>
