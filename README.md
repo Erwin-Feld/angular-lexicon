@@ -25,7 +25,39 @@
 * ` [(ngModel)]=""` is used to directly bind the input value to a [property](src\app\components\data-transfer-between-components\bi-directional\child-bi-directional\child-bi-directional.component.html)
     * to use ` [(ngModel)]=""`-->  `FormsModule` needs to be added to [app.module](src\app\app.module.ts) imports
 
+## using tables with angular material-design
 
+### setup material design
+* `ng add @angular/material` and add `MatTableModule` to [app.module.ts](src\app\app.module.ts) imports
+
+
+### display data in table
+* **data:** the `[dataSource]`[input](src\app\components\using-tables\basic-material-table\basic-material-table.component.html) is used to to tell which data is to be displayed
+
+* **adding columns**
+  * [ng-container](src\app\components\using-tables\basic-material-table\basic-material-table.component.html) adds a column to the table
+   * **adding column names** --- the `matColumnDef="first_name"` property contains the column name which is taken from the array property [`columnsToDisplay`](src\app\components\using-tables\basic-material-table\basic-material-table.component.ts) from the component
+   
+   * getting the data to the column
+        * with `<td mat-cell *matCellDef="let userData">{{ userData.id }}</td>`
+       the data is taken from the `dataSource` property
+
+    mandatory: 
+    ```
+     <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
+    ```
+    
+
+## tsconfig changes
+
+### able to import JSON data
+* add `
+ "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,`
+
+    to config
 
 ## routing
 content: how to set up basic routing
