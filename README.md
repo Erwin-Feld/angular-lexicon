@@ -47,7 +47,18 @@
      <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
     <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
     ```
-    
+### table data manipulation
+
+* click on table row and get index and data 
+    * defining inside [*matRowDef](src\app\components\using-tables\basic-material-table\basic-material-table.component.html)
+    the variables `let row; columns: columnsToDisplay; let i = index;`
+        * `let row` get the current row data 
+        * `let i = index` get the current index, 
+          *--> **! if ** one-row template /mutiple use different property name siehe ---get index of clicked row 
+    [stack over answer](https://stackoverflow.com/a/70477525/12753324)
+
+### table styling
+* access syling of a column to this `matColumnDef="first_name">` makes the column class automatically `.mat-column-first_name`
 
 ## tsconfig changes
 
